@@ -6,24 +6,27 @@ function stageImg(img_url) {
 }
 
 function savePost() {
+    let date = new Date().getTime().toString();
+
     let post = {
-        guid: new Date().getDate().toString,
+        guid: date,
         title: document.getElementById('titlePost').value,
         images: staged_img,
         thumbnail: staged_img[0]
     }
-    return fetch(apiUrl, {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        mode: "no-cors", // no-cors, cors, *same-origin
-        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
-        headers: {
-            "Content-Type": "application/json",
-            // "Content-Type": "application/x-www-form-urlencoded",
-        },
-        redirect: "follow", // manual, *follow, error
-        referrer: "no-referrer", // no-referrer, *client
-        body: JSON.stringify(post), // body data type must match "Content-Type" header
+    console.log(JSON.stringify(post));
+
+    $.ajax({
+        type: "POST", 
+        url: apiUrl, 
+        crossDomain: true,
+        data: JSON.stringify(post), 
+        contentType: "application/json",
+        dataType: "json", 
+        success: function(data, status) {
+            console.log("Data: " + data + " Status: " + status);
+            alert("You're a god!!!");
+        }
     });
-    console.log(post);
+    
 }
