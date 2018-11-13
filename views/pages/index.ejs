@@ -5,6 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="stylesheet" href="/css/custom.css" />
 		<noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload-0 is-preload-1 is-preload-2">
@@ -14,7 +15,9 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Post Maker :3</h1>
+                        <h1>Post Maker :3</h1>
+                        <input id="titlePost" type="text">
+                        <button onclick="savePost()">Save Post</button>
 					</header>
 
 				<!-- Thumbnail -->
@@ -22,7 +25,8 @@
 						<article>
 							<a class="thumbnail" href="images/fulls/01.jpg" data-position="left center"><img src="images/thumbs/01.jpg" alt="" /></a>
 							<h2>Diam tempus accumsan</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <button onclick="stageImg('images/fulls/01.jpg')" class="right-align">Save</button>
 						</article>
 						<article>
 							<a class="thumbnail" href="images/fulls/02.jpg"><img src="images/thumbs/02.jpg" alt="" /></a>
@@ -47,7 +51,7 @@
 						<article>
 							<a class="thumbnail" href="images/fulls/06.jpg"><img src="images/thumbs/06.jpg" alt="" /></a>
 							<h2>Phasellus magna faucibus</h2>
-							<p>Nulla dignissim libero maximus tellus varius dictum ut posuere magna.</p>
+                            <p>Nulla dignissim libero maximus tellus varius dictum ut posuere magna.</p>
 						</article>
 						<article>
 							<a class="thumbnail" href="images/fulls/07.jpg"><img src="images/thumbs/07.jpg" alt="" /></a>
@@ -95,6 +99,7 @@
 			<script src="/js/browser.min.js"></script>
 			<script src="/js/breakpoints.min.js"></script>
 			<script src="/js/main.js"></script>
+			<script src="/js/image-post.js"></script>
 
 	</body>
 </html>
