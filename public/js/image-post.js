@@ -1,5 +1,5 @@
 var staged_img = [];
-var apiUrl = " https://arivkc4qr0.execute-api.us-west-2.amazonaws.com/dev/posts"
+var apiUrl = "https://sjazup8js9.execute-api.us-west-1.amazonaws.com/dev/posts"
 
 function stageImg(img_url) {
     staged_img.push(img_url);
@@ -9,10 +9,8 @@ function savePost() {
     let date = new Date().getTime().toString();
 
     let post = {
-        guid: date,
         title: document.getElementById('titlePost').value,
-        images: staged_img,
-        thumbnail: staged_img[0]
+        images: staged_img
     }
     console.log(JSON.stringify(post));
 
