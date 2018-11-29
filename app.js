@@ -6,19 +6,19 @@ var images;
 
 
 app.set('view engine', 'ejs');
-/* request.get("https://arivkc4qr0.execute-api.us-west-2.amazonaws.com/dev/Hackaton_Lambda_Chris", (err, res, body) => {
+request.get("https://sjazup8js9.execute-api.us-west-1.amazonaws.com/dev/CMS_CONTENT", (err, res, body) => {
     if (err) {
         return console.dir(err);
     }
+    console.log(body);
     images = JSON.parse(body);
-}); */
+}); 
 
 app.get('/', function (req, res) {
-    // console.log(images);
-    res.render('pages/index');
-    /* res.render('pages/index', {
+    console.log(images);
+    res.render('pages/index', {
         images: images
-    }); */
+    });
 });
 
 app.use(express.static(__dirname + '/public'));

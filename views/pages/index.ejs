@@ -25,7 +25,15 @@
 
         <!-- Thumbnail -->
         <section id="thumbnails">
-            
+            <% images.forEach(function(image) { %>
+                <article>
+                        <a class="thumbnail" href="<%= image.src %>" data-position="left center"><img src="<%= image.src %>"
+                                alt="" /></a>
+                        <h2>Diam tempus accumsan</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <button onclick="stageImg('<%= image.src %>')" class="right-align">Save</button>
+                    </article>
+            <% }); %>
         </section>
 
         <!-- Footer -->
