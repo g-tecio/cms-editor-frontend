@@ -52,9 +52,9 @@ Resources:
     TaskDefinition:
         Type: AWS::ECS::TaskDefinition
         Properties:
-            Family: website-service
+            Family: CMS-clients
             ContainerDefinitions:
-                - Name: website-service
+                - Name: CMS-clients
                   Essential: true
                   Image: !Ref CreatorImage
                   Memory: 512
@@ -68,9 +68,9 @@ Resources:
     TaskDefinition:
         Type: AWS::ECS::TaskDefinition
         Properties:
-            Family: website-service
+            Family: CMS-clients
             ContainerDefinitions:
-                - Name: website-service
+                - Name: CMS-clients
                   Essential: true
                   Image: !Ref EditorImage
                   Memory: 512
@@ -84,9 +84,9 @@ Resources:
     TaskDefinition:
         Type: AWS::ECS::TaskDefinition
         Properties:
-            Family: website-service
+            Family: CMS-clients
             ContainerDefinitions:
-                - Name: website-service
+                - Name: CMS-clients
                   Essential: true
                   Image: !Ref ViewerImage
                   Memory: 512
