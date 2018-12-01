@@ -2,8 +2,13 @@ Description: >
     CMS
 
 Parameters:
-
+    CreatorImage:
+        Description:  123456789.dkr.ecr.us-east-1.amazonaws.com/YOUR-REGISTRY-HERE:git-hash
+        Type: String
     EditorImage:
+        Description:  123456789.dkr.ecr.us-east-1.amazonaws.com/YOUR-REGISTRY-HERE:git-hash
+        Type: String
+    ViewerImage:
         Description:  123456789.dkr.ecr.us-east-1.amazonaws.com/YOUR-REGISTRY-HERE:git-hash
         Type: String
 
@@ -50,6 +55,29 @@ Resources:
             Family: CMS-Clients
             ContainerDefinitions:
                 - Name: CMS-Clients
+                  Essential: true
+                  Image: !Ref CreatorImage
+                  Memory: 512
+                  PortMappings:
+                    - ContainerPort: 3000
+                  LogConfiguration:
+                    LogDriver: awslogs
+                    Options:
+                        awslogs-group: !Ref AWS::StackName
+                        awslogs-region: !Ref AWS::Region
+                - Name: CMS-Clients
+                  Essential: true
+                  Image: !Ref EditorImage
+                  Memory: 512
+                  PortMappings:
+                    - ContainerPort: 3000
+                  LogConfiguration:
+                    LogDriver: awslogs
+                    Options:
+                        awslogs-group: !Ref AWS::StackName
+                        awslogs-region: !Ref AWS::Region
+
+                 - Name: CMS-Clients
                   Essential: true
                   Image: !Ref EditorImage
                   Memory: 512
