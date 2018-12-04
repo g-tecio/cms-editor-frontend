@@ -17,7 +17,7 @@ request.get("https://sjazup8js9.execute-api.us-west-1.amazonaws.com/dev/CMS_CONT
 app.get('/', function (req, res) {
     console.log(images);
     res.render('pages/index', {
-        images: images
+        imgs: images
     });
 });
 
